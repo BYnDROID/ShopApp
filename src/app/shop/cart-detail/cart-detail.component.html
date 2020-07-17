@@ -24,9 +24,15 @@
               <td><img src="assets/img/{{ item.product.imageUrl }}" width="80" alt=""></td>
               <td>{{ item.product.name }}</td>
               <td>{{ item.product.price }} TL</td>
-              <td>{{ item.quantity }}</td>
+              <td>
+                <input type="text"
+                class="form-control"
+                style="width: 50px;"
+                [value]="item.quantity"
+                (change)="cart.updateQuantity(item.product,$event.target.value)">
+              </td>
               <td>{{ item.quantity * item.product.price }} TL</td>
-              <button class="btn btn-danger btn-sm mt-2">
+              <button class="btn btn-danger btn-sm" (click)="cart.removeItem(item.product.id)">
                 <i class="fa fa-times fa-fw"></i>
               </button>
             </tr>
@@ -62,9 +68,6 @@
             <button routerLink="/checkout" class="btn btn-primary btn-sm ml-2">Alişverişi Tamamla</button>
           </div>
         </div>
-      </ng-container>
-      <ng-container *ngIf="cart.itemCount==0">
-
       </ng-container>
 
     </div>
