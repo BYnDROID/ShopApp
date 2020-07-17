@@ -11,6 +11,8 @@ import { Router } from '@angular/router';
 export class ProductListComponent implements OnInit {
 
   @Input() products: Product[]=[];
+  selectedProduct:Product = null;
+
   constructor(
     private cart: Cart,
     private router: Router ) { }
@@ -18,9 +20,16 @@ export class ProductListComponent implements OnInit {
   ngOnInit(): void {
   }
 
-
   addProductToCart(product : Product){
     this.cart.addItem(product);
     this.router.navigateByUrl('/cart');
+  }
+
+  displayDetails(product : Product){
+    this.selectedProduct = product;
+  }
+
+  hidenDetails(){
+    this.selectedProduct = null;
   }
 }

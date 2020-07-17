@@ -32,7 +32,7 @@
                 (change)="cart.updateQuantity(item.product,$event.target.value)">
               </td>
               <td>{{ item.quantity * item.product.price }} TL</td>
-              <button class="btn btn-danger btn-sm" (click)="cart.removeItem(item.product.id)">
+              <button class="btn btn-danger btn-sm mt-2" (click)="cart.removeItem(item.product.id)">
                 <i class="fa fa-times fa-fw"></i>
               </button>
             </tr>
