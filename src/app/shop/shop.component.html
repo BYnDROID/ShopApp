@@ -4,15 +4,14 @@
     <div class="col-3">
       <cart-summary></cart-summary>
       <div class="list-group">
-        <a href="#"
+        <button
           (click)="cahngeCategory()"
-          class="list-group-item list-group-item-action">Tüm Kategoriler</a>
-        <a
+          class="list-group-item list-group-item-action">Tüm Kategoriler</button>
+        <button
           *ngFor="let c of categories"h
           (click)="cahngeCategory(c)"
-          ref="#"
           class="list-group-item list-group-item-action"
-          [class.active] = "c==selectedCategory">{{ c.name }}</a>
+          [class.active] = "c==selectedCategory">{{ c.name }}</button>
       </div>
     </div>
     <div class="col-9">
