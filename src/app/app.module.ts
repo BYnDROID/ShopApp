@@ -16,13 +16,14 @@ import { CheckoutComponent } from './shop/checkout/checkout.component';
     BrowserModule,
     ShopModule,
     RouterModule.forRoot([
-      { path: 'shop', component: ShopComponent },
-      { path: 'cart', component: CartDetailComponent },
-      { path: 'checkout', component: CheckoutComponent },
-      { path: '**', redirectTo: "/shop" }
+      { path: 'shop', component: ShopComponent},
+      { path: 'cart', component: CartDetailComponent},
+      { path: 'checkout', component: CheckoutComponent},
+      { path: 'admin', loadChildren : './admin/admin.module#AdminModule'},
+      { path: '**', redirectTo: "/shop"}
     ])
   ],
   providers: [],
-  bootstrap: [ AppComponent ]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
