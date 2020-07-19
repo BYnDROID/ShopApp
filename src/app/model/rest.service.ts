@@ -28,15 +28,15 @@ export class RestService {
     return this.http.post<Order>(this.baseUrl + 'orders', order);
   }
 
-  authentication(username: string, password: string):Observable<boolean> {
-    return this.http.post<any>(this.baseUrl + 'ligin', {
-      username:username,
-      pasword:password
-    }).pipe( map( response => {
+  authentication(username: string, password: string): Observable<boolean> {
+    return this.http.post<any>(this.baseUrl + 'login', {
+      username: username,
+      password: password
+    }).pipe(map(response => {
       this.token = response.success ? response.token : null;
       console.log(this.token);
       return response.success;
-    } ) );
+    }));
   }
 
 }
