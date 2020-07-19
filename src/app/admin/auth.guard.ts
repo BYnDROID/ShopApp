@@ -9,16 +9,16 @@ export class AutGuard implements CanActivate {
 
   }
 
-  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | import("@angular/router").UrlTree | import("rxjs").Observable<boolean | import("@angular/router").UrlTree> | Promise<boolean | import("@angular/router").UrlTree> {
+  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
 
     if( !this.authService.authenticated ){
       this.router.navigateByUrl('/admin/auth');
-      console.log("LOG IN YAP");
-      console.log(this.authService.authenticated);
+    //  console.log("LOG IN YAP");
+    //  console.log(this.authService.authenticated);
       return false;
     }
-    console.log("LOG IN Lİ ZATEN");
-    console.log(this.authService.authenticated);
+  //  console.log("LOG IN Lİ ZATEN");
+  //  console.log(this.authService.authenticated);
     return true;
 
   }

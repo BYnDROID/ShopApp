@@ -20,6 +20,7 @@ export class AuthService {
     }
 
     clear() {
-        this.restService.token = null;
+    //  console.log("LOG OUT YAPILDI");
+      this.restService.token = "";
     }
 }

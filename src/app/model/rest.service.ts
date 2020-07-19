@@ -34,7 +34,7 @@ export class RestService {
       password: password
     }).pipe(map(response => {
       this.token = response.success ? response.token : null;
-      console.log(this.token);
+    //  console.log(this.token);
       return response.success;
     }));
   }
