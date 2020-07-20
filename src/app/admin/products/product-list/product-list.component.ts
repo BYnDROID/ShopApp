@@ -19,7 +19,8 @@ export class ProductListComponent implements OnInit {
   }
 
   deleteProduct(product: Product) {
-    alert("test");
+    //alert("test");
+    return this.productRepository.deleteProduct(product);
   }
 
 }

@@ -37,5 +37,11 @@ export class ProductRepository implements OnInit{
                 this.products.splice(this.products.findIndex(p => p.id == product.id), 1, product);
             })
     }
-}
+  }
+
+  deleteProduct(product: Product) {
+    this.restService.deleteProduct(product)
+        .subscribe(p => this.products.splice(this.products.findIndex(p => p.id == product.id),1));
+  }
+
 }
