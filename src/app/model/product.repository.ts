@@ -26,4 +26,16 @@ export class ProductRepository implements OnInit{
     else
       return this.products;
   }
+
+  saveProduct(product: Product) {
+    if (product.id == null || product.id == 0) {
+        this.restService.addProduct(product)
+            .subscribe(p => this.products.push(p));
+    } else {
+        this.restService.updateProduct(product)
+            .subscribe(p => {
+                this.products.splice(this.products.findIndex(p => p.id == product.id), 1, product);
+            })
+    }
+}
 }
