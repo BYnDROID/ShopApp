@@ -18,7 +18,8 @@ module.exports = function(){
     categories: [
       { id: 1, name: 'Telefon' },
       { id: 2, name: 'Bilgisayar' },
-      { id: 3, name: 'Laptop' }
+      { id: 3, name: 'Laptop' },
+      { id: 4, name: 'Tablet' }
     ],
     orders: [
 
