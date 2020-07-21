@@ -11,7 +11,7 @@ import { map } from 'rxjs/operators';
 })
 export class RestService {
 
-  baseUrl: string = "http://localhost:3500/";
+  baseUrl: string = "http://localhost:3000/";
   token: string  = "";
 
   constructor(private http: HttpClient) { }
